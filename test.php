@@ -1,6 +1,5 @@
 
 
 
-I am the developer in chapter 247
 
-I am the farooque khan.
+My name is khan this is testing.
