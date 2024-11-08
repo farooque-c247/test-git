@@ -1,5 +1,33 @@
+<?php
 
 
 
+interface User {
+    public function getName(): string;
+}
 
-My name is khan this is testing.
+interface Admin {
+    public function getPermissions(): array;
+}
+
+class SuperAdmin implements User, Admin {
+    public function getName(): string {
+        return 'Super Admin';
+    }
+
+    public function getPermissions(): array {
+        return ['manage_users', 'view_reports'];
+    }
+}
+
+
+function processAdmin(User & Admin $admin): void {
+    echo "Processing admin: " . $admin->getName() . PHP_EOL;
+    echo "Permissions: " . implode(', ', $admin->getPermissions()) . PHP_EOL;
+}
+
+// Create an instance of SuperAdmin
+$superAdmin = new SuperAdmin();
+
+// Call the function
+processAdmin($superAdmin);
