@@ -22,7 +22,7 @@ class SuperAdmin implements User, Admin {
 
 
 function processAdmin(User & Admin $admin): void {
-    echo "Processing admin: " . $admin->getName() . PHP_EOL;
+    echo "Processing super admin: " . $admin->getName() . PHP_EOL;
     echo "Permissions: " . implode(', ', $admin->getPermissions()) . PHP_EOL;
 }
 
